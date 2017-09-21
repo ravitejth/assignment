@@ -1,0 +1,79 @@
+.container
+    .row.empty-row
+    .row
+        .col.s10
+            h4.text-center User Details Form
+        .col.s2
+            button.btn.btn-primary(routerLink='/confirm') View all users
+    .row
+        .col.s12
+            .row
+                .col.s6
+                    .input-field
+                        input#first_name(type='text', name='first_name', [(ngModel)]='user.firstName')
+                        label(for='first_name') First name
+
+                .col.s6
+                    .input-field
+                        input#last_name(type='text', name='last_name', [(ngModel)]='user.lastName')
+                        label(for='last_name') Last name
+            .row
+                .col.s4
+                    input#dob.datepicker(type='text', name='dob', [(ngModel)]='user.dob', (focus) ='setDOB($event)')
+                    //label(for='dob') Date of birth
+                .col.s2
+                    .input-field
+                        span Age : {{user.age}}
+                .col.s6
+                    input#male(name="gender", type="radio", value="1", [(ngModel)]='user.gender')
+                    label(for="male") Male
+                    input#female(name="gender", type="radio", value="2", [(ngModel)]='user.gender')
+                    label(for="female") Female
+            .row
+                .col.s6
+                    select#occupations.form-control.validate.browser-default(name='occupation', [(ngModel)]='user.occupation')
+                        //option.float-right(*ngFor='let occupation of occupations', [ngValue]='occupation.id') {{occupation.name}}
+                        option.float-right(value='Student') Student
+                        option.float-right(value='Teacher') Teacher
+                        option.float-right(value='Other') Other
+            .row
+                .col.s6(*ngFor='let phone of phones; let i=index')
+                    .input-field
+                        input.validate(id='phone{{i}}', type='text', name="phone{{i}}",  [(ngModel)]='phone.number')
+                        label(for='phone{{i}}') Mobile number
+                .input-field.col.s3.float-right
+                    a.btn.primary((click)='addMorePhones()') Add
+            .row
+                .col.s6
+                    .input-field
+                        input.validate(id='address_line_1', type='text', name="address_line_1",  [(ngModel)]='user.address_line_1')
+                        label(for='address_line_1') Address line 1
+                .col.s6
+                    .input-field
+                        input.validate(id='address_line_2', type='text', name="address_line_2",  [(ngModel)]='user.address_line_2')
+                        label(for='address_line_2') Address line 2
+            .row
+                .col.s6
+                    .input-field
+                        input.validate(id='address_line_3', type='text', name="address_line_1",  [(ngModel)]='user.address_line_3')
+                        label(for='address_line_3') Address line 3
+            .row
+                .col.s10(*ngFor='let IdProof of IdProofs; let i=index')
+                    .col.s6
+                        select#ID.form-control.validate.browser-default(name='id_proof', [(ngModel)]='IdProof.idProofType')
+                            //option.float-right --Please select Id proof---
+                            //option.float-right(*ngFor='let idProoftype of idProofTypes', [ngValue]='idProoftype.id') {{idProoftype.name}}
+                            option.float-right(value='Aadhaar') Aadhaar Card
+                            option.float-right(value='Voter') Voter card
+                            option.float-right(value='PAN') PAN card
+                    .col.s6
+                        .input-field
+                            input#idProofValue(type='text', name='idProofValue', [(ngModel)]='IdProof.idProofValue')
+                            label(for='idProofValue') ID Proof number
+                .input-field.col.s2.float-right
+                    a.btn.primary((click)='addMoreProofs()') Add
+            .row
+                .col.s6
+                    button.btn.btn-info.right(type='button', (click)='saveUserDetails()') Save Details
+
+

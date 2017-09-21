@@ -1,0 +1,35 @@
+.container
+    .row.empty-row
+    .row
+        .col.s10
+            h4.text-center Users data
+        .col.s2
+            button.btn.btn-primary(routerLink='/') Add new user
+    table.striped.bordered.centered
+        thead
+            tr
+                th First name
+                th Last name
+                th Birthday
+                th Age
+                th Occupation
+                th Gender
+                th Phone numbers
+                th Address
+                th ID proof
+        tbody.blocked-span
+            tr(*ngFor = 'let user of users')
+                td {{user.firstName}}
+                td {{user.lastName}}
+                td {{user.dob}}
+                td {{user.age}}
+                td {{user.occupation}}
+                td {{user.gender}}
+                td
+                    span(*ngFor='let phone of user.phones;let i=index') {{phone.number}}
+                td
+                    span {{user.address_line_1}}
+                    span {{user.address_line_2}}
+                    span {{user.address_line_3}}
+                td
+                    span(*ngFor='let IdProof of user.IdProofs;let i=index') {{IdProof.idProofType}} : {{IdProof.idProofValue}}
