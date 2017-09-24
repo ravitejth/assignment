@@ -3,7 +3,7 @@ import * as $ from 'jquery';
 import moment = require('moment');
 
 @Component({
-  selector: 'form',
+  selector: 'inputform',
   styleUrls: [ 'form.scss'],
   templateUrl: 'form.pug',
 })
@@ -19,34 +19,34 @@ export class FormComponent implements OnInit{
     'idProofValue' : ''
   }];
   
-  private idProofTypes :any = [{
-    'id' : '1',
-    'name' : 'Aadhaar card'
-  },{
-    'id' : '2',
-    'name' : 'Voter card'
-  },{
-    'id' : '3',
-    'name' : 'PAN card'
-  }];
-  
-  
-  private occupations = [{
-    'name' : '--Please select occupation -- ',
-    'id'   : '0'
-  },{
-    'name' : 'Student',
-    'id'   : '1'
-  },{
-    'name' : 'Teacher',
-    'id'   : '2'
-  },{
-    'name' : 'Unemployed',
-    'id'   : '3'
-  }];
+  // private idProofTypes :any = [{
+  //   'id' : '1',
+  //   'name' : 'Aadhaar card'
+  // },{
+  //   'id' : '2',
+  //   'name' : 'Voter card'
+  // },{
+  //   'id' : '3',
+  //   'name' : 'PAN card'
+  // }];
+  //
+  //
+  // private occupations = [{
+  //   'name' : '-- Select occupation -- ',
+  //   'id'   : '0'
+  // },{
+  //   'name' : 'Student',
+  //   'id'   : '1'
+  // },{
+  //   'name' : 'Teacher',
+  //   'id'   : '2'
+  // },{
+  //   'name' : 'Unemployed',
+  //   'id'   : '3'
+  // }];
   
   ngOnInit(){
-    this.user.occupation = this.occupations[0].id;
+    this.user.occupation = '';
   }
   
   setDOB($event){

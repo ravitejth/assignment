@@ -12,8 +12,6 @@ import { FormDataComponent }  from './form-data/form-data.component';
 import { AppRoutingModule } from './app-routing.module';
 
 // SERVICES
-import { HttpService }    from '../services/http.service';
-import { DataService }    from '../services/data.service';
 
 @NgModule({
   imports: [
@@ -29,8 +27,6 @@ import { DataService }    from '../services/data.service';
     FormDataComponent
   ],
   providers: [
-    HttpService,
-    DataService
   ],
   bootstrap: [
     AppComponent

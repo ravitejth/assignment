@@ -3,3 +3,17 @@ $fa-font-path: "../../node_modules/font-awesome/fonts";
 
 //== Font-awesome
 @import "~font-awesome/scss/font-awesome";
+
+//== Common Styles
+
+.header-style{
+  color: #F9AA23;
+}
+
+.body-background{
+  background-color: #ddd !important;
+}
+.container-style{
+  background-color: #fff !important;
+  padding: 40px;
+}
