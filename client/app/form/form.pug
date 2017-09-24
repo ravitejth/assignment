@@ -51,17 +51,17 @@
                     .col.s12
                         .padding
                             .input-field
-                                input.validate(id='address_line_1', type='text', placeholder='Address line 1', pattern="[A-Za-z0-9#/- ]{0,32}", name="address_line_1",  [(ngModel)]='user.address_line_1')
-                                label(for='address_line_1' data-error="Only # / - allowed") Address
+                                input.validate(id='address_line_1', type='text', placeholder='Address line 1', pattern="[A-Za-z0-9#/-]{0,32}", name="address_line_1",  [(ngModel)]='user.address_line_1')
+                                label(for='address_line_1' data-error="No spaces, Only # / - allowed") Address
                     .col.s12
                         .padding
                             .input-field
-                                input.validate(id='address_line_2', type='text', pattern="[A-Za-z0-9#/- ]{0,32}", name="address_line_2",  [(ngModel)]='user.address_line_2')
+                                input.validate(id='address_line_2', type='text', pattern="[A-Za-z0-9#/-]{0,32}", name="address_line_2",  [(ngModel)]='user.address_line_2')
                                 label(for='address_line_2' data-error="Only # / - allowed") Address line 2
                     .col.s12
                         .padding
                             .input-field
-                                input.validate(id='address_line_3', type='text', pattern="[A-Za-z0-9#/- ]{0,32}", name="address_line_3",  [(ngModel)]='user.address_line_3')
+                                input.validate(id='address_line_3', type='text', pattern="[A-Za-z0-9#/-]{0,32}", name="address_line_3",  [(ngModel)]='user.address_line_3')
                                 label(for='address_line_3' data-error="Only # / - allowed") Address line 3
 
                 //Mobile numbers
@@ -70,7 +70,7 @@
                         .padding
                             .input-field
                                 input.validate(id='phone{{i}}', type='text', pattern="[0-9]{10}", name="phone{{i}}",  [(ngModel)]='phone.number')
-                                label(for='phone{{i}}' data-error="Numbers only!") Mobile number
+                                label(for='phone{{i}}' data-error="10 digits, Numbers only!") Mobile number
                     .input-field.col.s3.float-right
                         a.btn.primary((click)='addMorePhones()') Add
 
